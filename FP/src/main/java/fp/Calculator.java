@@ -18,10 +18,19 @@ public class Calculator {
 
 
 	/*
-     * devuelve una lista con los n números de la serie de fibonacci.
+     * devuelve una lista con los n numeros de la serie de fibonacci.
      */
 	public static List<Integer> fibonacci(int n) {
 		List<Integer> lista = new ArrayList<Integer>();
+		if(n<1)
+			return lista;
+		lista.add(1);
+		if(n==1)
+			return lista;
+		lista.add(1);
+		for(int i=2; i<n; i++){
+			lista.add(lista.get(i-2) + lista.get(i-1));
+		}
 		return lista;
 	}
 
