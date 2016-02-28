@@ -59,8 +59,24 @@ public class Calculator {
 	 * divisores que tiene.
 	 */
 	public static int[] divisors(int n) {
-		throw  new NotImplementedException();
+		int length=0;
+		int divisor[];
+		if(n>0 && n<=20){
+			for(int i=1; i<=n; i++)
+				 if(n%i==0)
+				 length++;
+				 divisor = new int[length];
+			for(int i=n,j=0; i>0; i--){
+				if(n%i==0){
+					divisor[j]=i;
+					j++;
+				}
+			}
+		return divisor;
+		}else
+			return divisor=null;
 	}
+
 
 	/*
 	 * Toma como parámetros una cadena de caracteres y devuelve cierto si la cadena resulta ser un palíndromo
