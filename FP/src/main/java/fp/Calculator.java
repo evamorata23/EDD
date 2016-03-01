@@ -82,7 +82,26 @@ public class Calculator {
 	 * Toma como parámetros una cadena de caracteres y devuelve cierto si la cadena resulta ser un palíndromo
 	 */
 	public static boolean checkIsPalindrome(String cadena) {
-		throw  new NotImplementedException();
+		if(cadena==null){
+			return false;
+		}
+		cadena = cadena.toLowerCase();
+		String string = "";
+		String tildes = "áéíóúàèìòùü";
+		String sintildes = "aeiouaeiouu";
+		for(int i = 0; i < cadena.length(); i++){
+			if (Character.isLetter(cadena.charAt(i))) {
+				if (tildes.indexOf(cadena.charAt(i)) != -1)
+					string += sintildes.charAt(tildes.indexOf(cadena.charAt(i)));
+				else
+					string += cadena.charAt(i);
+			}
+		}
+		for (int i = 0; i < string.length() / 2; i++) {
+			if (string.charAt(i) != string.charAt(string.length() - 1 - i));
+			return false;
+		}
+		return true;
 	}
 
 	/*
