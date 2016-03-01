@@ -109,7 +109,23 @@ public class Calculator {
 	 * mostrar: cincuenta y seis
 	 */
 	public static String speakToMe(int n) {
-		throw  new NotImplementedException();
+		String[] decenas = {"Cero","Diez","Veinte","Treinta","Cuarenta","Cincuenta","Sesenta","Setenta","Ochenta","Noventa"};
+		String[] unidades = {"","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","Diez","Once","Doce","Trece","Catorce","Quince","Dieciseis","Diecisiete","Dieciocho","Diecinueve"};
+		String nEscrito="";
+		if(n==0){
+			nEscrito=decenas[0];
+			return nEscrito;
+		}else if(n<20){
+			nEscrito = unidades[n];
+			return nEscrito;
+		}else if((n%10)==0){
+			nEscrito=decenas[n/10];
+			return nEscrito;
+		}else{
+			nEscrito=decenas[n/10]+" y "+unidades[n%10];
+			return nEscrito;
+		}
+
 	}
 
 	/*
