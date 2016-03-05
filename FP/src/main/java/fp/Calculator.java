@@ -146,6 +146,17 @@ public class Calculator {
 	 * este metodo devuelve cierto si la fecha es válida
 	 */
 	public static boolean isValidDate(String date) {
-		throw  new NotImplementedException();
+		try{
+			int year = Integer.valueOf(date.substring(6,10));
+			int month = Integer.valueOf(date.substring(3,5));
+			int day = Integer.valueOf(date.substring(0,2));
+			if(year==0 || month==0 || day==0 || month > 12 || day > 31){
+				return false;
+			}
+			Calendar calendar = new GregorianCalendar(year,month,day);
+			return true;
+		}catch(Exception e){
+			return false;
+		}
 	}
 }
